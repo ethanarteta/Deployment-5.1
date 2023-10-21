@@ -105,8 +105,20 @@ python -m gunicorn app:app -b 0.0.0.0 -D && echo "Done"
 1. Check the application on Instance 3.
 2. Observed it running on port 8000
 
+## FAQ
 
+### What should be added to the infrastructure to make the application more available to users?
+- To make this application more available we should consider using a load balancer to distribute traffic and ensure high availability. 
+- Setting up auto-scaling groups to adjust the number of ec2 instances that will handle more requests during peak times and scaling down during low traffic periods
+- We could deploy to more availability zones which would increase fault tolerance if other AZ experience issues
+- A CDN like AWS CloudFront could deliver content from edge locations reducing latency and making the application more available to users.
+### What is the purpose of a Jenkins Agent
+- Jenkins agents allow us to execute multiple builds and deployments on different EC2 instances simultaneously. This reduces the time required to complete tasks and improves efficiency
+- Jenkins agents can be configured with specific environments, tools, and dependencies. This isolation ensures that builds and deployments are consistent and independent of each other, reducing potential conflicts.
+- Agents distribute the workload, making it possible to scale your Jenkins infrastructure horizontally. As your project grows, you can add more agents to accommodate increased demand.
+- Jenkins agents can be distributed across multiple machines, helping balance the load and preventing a single Jenkins master from becoming a bottleneck.
 
+  
 ### System Diagram
 ![image](Deployment5.1/Deployment5.1.png)
 
@@ -119,7 +131,6 @@ To make this deployment more efficient, I would implement the following:
 
 3. **Containerization:** Consider containerizing the banking application using Docker and deploying it on an orchestration platform like Kubernetes for more efficient management and scalability.
 
-![image](Deployment5/BankingApplication.png)
 ![image](Deployment5.1/Deployment5.1server1.png)
 ![image](Deployment5.1/Deployment5.1server2.png)
 ![image](Deployment5.1/Deployment5.1Jenkins.png)
