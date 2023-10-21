@@ -31,22 +31,22 @@ This deployment needs:
 1. Following these Steps:
     - Select "Build Executor Status"
     - Click "New Node"
-    - Choose a node name that will coorespond with the Jenkins agent defined in our Jenkins file
+    - Choose a node name that will correspond with the Jenkins agent defined in our Jenkins file
     - Select permenant Agent
     - Create the node
     - Use the same name for the name field
     - Enter "/home/ubuntu/agent1" as the "Remote root directory"
     - Use the same name for the labels field
-    - Click dropdown menu and select "only build jobs with label expressions matrching this node"
-    - Click dropdown menu and select "launch agent via SSH"
+    - Click the dropdown menu and select "only build jobs with label expressions matching this node"
+    - Click the dropdown menu and select "launch agent via SSH"
     - Enter the public IP address of the instance you want to install the agent on, in the "Host" field
     - Click "Add" to add Jenkins credentials
-    - Click dropdown menu and select "select SSH username with private key"
+    - Click the dropdown menu and select "select SSH username with private key"
     - Use the same name for the ID field 
     - Use "ubuntu" for the username
-    - Enter directly & add private key by pasting it into the box
-    - Click "Add" and select the ubuntu credentials
-    - Click dropdown menu and select "snon verifying verification strategy"
+    - Enter directly & add the private key by pasting it into the box
+    - Click "Add" and select the Ubuntu credentials
+    - Click the dropdown menu and select "non verifying verification strategy"
     - Click save & check in Jenkins UI for a successful installation by clicking "Log"
 
 ### Step 4: Jenkinsfile Configuration
@@ -117,7 +117,7 @@ To make this deployment more efficient, I would implement the following:
 
 2. **Implement Autoscaling:** Set up auto-scaling groups for EC2 instances to automatically adjust the number of instances based on traffic demands.
 
-3. **Containerization:** Consider containerizing your application using Docker and deploy it on an orchestration platform like Kubernetes for more efficient management and scalability.
+3. **Containerization:** Consider containerizing the banking application using Docker and deploying it on an orchestration platform like Kubernetes for more efficient management and scalability.
 
 ![image](Deployment5/BankingApplication.png)
 
