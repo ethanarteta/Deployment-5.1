@@ -1,0 +1,38 @@
+<div class="navbar">
+  <a href="{{ url_for('dashboard') }}" class="nav-link {% if home %}active{% endif %}">Home</a>
+  {% if not session['user'] %}
+  <a href="{{ url_for('login') }}" class="nav-link {% if login %}active{% endif %}">Log In</a>
+  {% else %}
+    {% if session['usert']=="executive" %}
+      <div class="subnav">
+        <button class="subnavbtn">Customer Management <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="{{ url_for('addcustomer') }}" class="nav-link {% if addcustomer %}active{% endif %}">Add Customer</a>
+          <a href="{{ url_for('viewcustomer') }}" class="nav-link {% if viewcustomer %}active{% endif %}" >View Customer</a>
+          <a href="{{ url_for('editcustomer') }}" class="nav-link {% if editcustomer %}active{% endif %}">Edit Customer</a>
+          <a href="{{ url_for('customerstatus') }}" class="nav-link {% if customerstatus %}active{% endif %}">Customer Status</a>
+
+
+        </div>
+      </div>
+      <div class="subnav">
+        <button class="subnavbtn">Account Management <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="{{ url_for('addaccount') }}" class="nav-link {% if addaccount %}active{% endif %}">Add Account</a>
+          <a href="{{ url_for('viewaccount') }}" class="nav-link {% if viewaccount %}active{% endif %}">View Account</a>
+          <a href="{{ url_for('viewaccountstatus') }}" class="nav-link {% if viewaccountstatus %}active{% endif %}">Account Status</a>
+        </div>
+      </div>
+    {% elif session['usert']=="teller" or session['usert']=="cashier" %}
+      <div class="subnav">
+        <button class="subnavbtn">Account Management <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="{{ url_for('viewaccount') }}" class="nav-link {% if viewaccount %}active{% endif %}">View Account</a>
+          <a href="{{ url_for('statement') }}" class="nav-link {% if statement %}active{% endif %}">Account Statement</a>
+        </div>
+      </div>
+    {% endif %}
+    <a href="#contact">Contact Us</a>
+    <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+  {% endif %}
+</div>
