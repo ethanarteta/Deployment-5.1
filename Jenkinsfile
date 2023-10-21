@@ -27,6 +27,7 @@ junit 'test-reports/results.xml'
 }
 stage ('Clean') {
 agent {label 'awsDeploy'}
+agent {label 'awsDeploy2'}
 steps {
 sh '''#!/bin/bash
 if [[ $(ps aux | grep -i "gunicorn" | tr -s " " | head -n 1 | cut -d " " -f 2) != 0 ]]
@@ -40,6 +41,7 @@ fi
 }
 stage ('Deploy') {
 agent {label 'awsDeploy'}
+agent {label 'awsDeploy2'}
 steps {
 keepRunning {
 sh '''#!/bin/bash
