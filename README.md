@@ -108,7 +108,7 @@ python -m gunicorn app:app -b 0.0.0.0 -D && echo "Done"
 
 
 ### System Diagram
-![image](Deployment5/Deployment5.png)
+![image](Deployment5.1/Deployment5.1.png)
 
 ### Optimization
 To make this deployment more efficient, I would implement the following:
@@ -120,5 +120,6 @@ To make this deployment more efficient, I would implement the following:
 3. **Containerization:** Consider containerizing the banking application using Docker and deploying it on an orchestration platform like Kubernetes for more efficient management and scalability.
 
 ![image](Deployment5/BankingApplication.png)
-
-![image](Deployment5/Jenkins.png)
+![image](Deployment5.1/Deployment5.1server1.png)
+![image](Deployment5.1/Deployment5.1server2.png)
+![image](Deployment5.1/Deployment5.1Jenkins.png)
